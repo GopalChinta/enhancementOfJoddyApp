@@ -2,6 +2,15 @@
   margin-top: 16px;
 }
 
+@media screen and (min-width: 768px) {
+  .filters-group-container {
+    width: 30%;
+    max-width: 300px;
+    min-width: 240px;
+    margin-top: 48px;
+    flex-shrink: 0;
+  }
+}
 .search-input-container {
   display: flex;
   align-items: center;
@@ -14,8 +23,8 @@
 
 .search-input {
   background-color: transparent;
-  color: white;
-  font-family: 'roboto';
+  color: #ffffff;
+  font-family: 'Roboto';
   font-size: 14px;
   font-weight: 500;
   border: none;
@@ -26,7 +35,6 @@
   padding-bottom: 6px;
   padding-right: 16px;
 }
-
 .search-button-container {
   background-color: #475569;
   border: none;
@@ -39,34 +47,34 @@
 }
 
 .search-icon {
-  color: white;
+  color: #ffffff;
   width: 15px;
   height: 15px;
 }
-
+@media screen and (min-width: 768px) {
+  .search-input-container {
+    display: none;
+  }
+}
 .horizontal-line {
   background-color: #475569;
 }
-
 .employment-type-container {
   display: flex;
   flex-direction: column;
 }
-
 .employment-type-heading {
-  color: white;
-  font-family: roboto;
+  color: #ffffff;
   font-weight: 400;
+  font-family: 'Roboto';
   font-size: 16px;
   padding-bottom: 15px;
 }
-
 .employee-type-list-container {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
-
 .employee-item {
   display: flex;
   align-items: center;
@@ -75,29 +83,26 @@
 }
 
 .check-label {
-  color: white;
+  color: #ffffff;
   margin-left: 10px;
   font-size: 14px;
 }
-
 .salary-range-container {
   display: flex;
   flex-direction: column;
 }
-
 .salary-range-heading {
-  color: white;
+  color: #ffffff;
   font-weight: 400;
+  font-family: 'Roboto';
   font-size: 16px;
   padding-bottom: 15px;
 }
-
 .salary-range-list-container {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
-
 .salary-item {
   display: flex;
   align-items: center;
@@ -106,7 +111,7 @@
 }
 
 .check-label {
-  color: white;
+  color: #ffffff;
   margin-left: 10px;
   font-size: 14px;
 }

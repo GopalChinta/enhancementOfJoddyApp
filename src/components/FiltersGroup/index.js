@@ -20,8 +20,12 @@ const FiltersGroup = props => {
     const {getJobs, searchInput} = props
     return (
       <div className="search-input-container">
+        <label htmlFor="searchInput" className="visually-hidden">
+          Search
+        </label>
         <input
           type="search"
+          id="searchInput"
           className="search-input"
           placeholder="Search"
           value={searchInput}
@@ -30,47 +34,49 @@ const FiltersGroup = props => {
         />
         <button
           type="button"
-          id="searchButton"
+          data-testid="searchButton"
           className="search-button-container"
           onClick={getJobs}
         >
+          Click
           <BsSearch className="search-icon" />
         </button>
       </div>
     )
   }
 
+  const onSelectEmployeeType = event => {
+    const {changeEmployeeList} = props
+    changeEmployeeList(event.target.value)
+    // console.log(event.target.value)
+  }
+
   const renderTypeOfEmployment = () => {
     const {employmentTypesList} = props
     return (
       <div className="employment-type-container">
-        <h1 className="employment-type-heading">Type of Employment</h1>
-        <ul className="employment-type-list-container">
-          {employmentTypesList.map(eachEmployeeType => {
-            const {changeEmployeeList} = props
-            const onSelectEmployeeType = event => {
-              changeEmployeeList(event.target.value)
-            }
-            return (
-              <li
-                className="employee-item"
-                key={eachEmployeeType.employmentTypeId}
+        <h1 className="employment-type-heading"> Type of Employment</h1>
+        <ul className="employee-type-list-container">
+          {employmentTypesList.map(eachEmployeeType => (
+            <li
+              className="employee-item"
+              key={eachEmployeeType.employmentTypeId}
+            >
+              <input
+                type="checkbox"
+                id={eachEmployeeType.employmentTypeId}
+                className="check-input"
+                value={eachEmployeeType.employmentTypeId}
                 onChange={onSelectEmployeeType}
+              />
+              <label
+                htmlFor={eachEmployeeType.employmentTypeId}
+                className="check-label"
               >
-                <input
-                  type="checkbox"
-                  id={eachEmployeeType.employmentTypeId}
-                  onChange={onSelectEmployeeType}
-                />
-                <label
-                  htmlFor={eachEmployeeType.employmentTypeId}
-                  className="check-label"
-                >
-                  {eachEmployeeType.label}
-                </label>
-              </li>
-            )
-          })}
+                {eachEmployeeType.label}
+              </label>
+            </li>
+          ))}
         </ul>
       </div>
     )
@@ -124,6 +130,4 @@ const FiltersGroup = props => {
     </div>
   )
 }
-
 export default FiltersGroup
-

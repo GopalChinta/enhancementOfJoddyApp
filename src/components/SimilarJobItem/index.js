@@ -46,4 +46,3 @@ const SimilarJobItem = props => {
   )
 }
 export default SimilarJobItem
-

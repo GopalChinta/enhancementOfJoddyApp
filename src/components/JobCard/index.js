@@ -55,4 +55,3 @@ const JobCard = props => {
   )
 }
 export default JobCard
-
